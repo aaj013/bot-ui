@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Bot UI';
+  message = '';
+
+  onClickMe(value) {
+    this.message = this.message+'Input : '+value;
+  }
 }
