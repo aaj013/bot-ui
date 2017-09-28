@@ -6,20 +6,20 @@
 </div>
 <div class="row" style="margin-top:100px">
 <div class="col-md-4 col-md-offset-4">
-  <div class="panel panel-primary">
+  <div [class]="'panel '+panel_color">
   <div class="panel-heading">
     Sender
   </div>
   <div class="panel-body">
-    <div class="stash-area" style="height:200px">
-      {{message}}
+    <div [innerHtml]="messageBox" #stashArea class="stash-area" style="height:200px;margin-bottom:10px;overflow-y:auto">
     </div>
-    <div class="send-area" style="height:80px">
+<!--       <app-server></app-server> -->
+    <div class="send-area" style="height:80px;">
       <div class="col-md-10 form-group">
         <textarea #textArea id="message-box" class="form-control" rows="3"></textarea>
       </div>
       <div class="col-md-2 form-group">
-        <button class="btn btn-sm btn-primary" type="button" (click)="onClickMe(textArea.value)">Send</button>
+        <button [class]="'btn btn-sm '+ btn_color" type="button" (click)="onClickMe(textArea.value)">Send</button>
       </div>
     </div>
   </div>
