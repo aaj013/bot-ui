@@ -5,8 +5,14 @@ import 'rxjs/add/operator/map';
 export class AppService {
     constructor(private http: Http) { }
 
-    getTime(value) {
-        return this.http.get('http://localhost/testbot/public/index.php/bot/' + value)
+    getMessage(value) {
+        let url = 'http://localhost/testbot/public/index.php/bot/';        
+        return this.http.post(
+            url,
+            {
+                message: value
+            }
+            )
             .map(res => res.text());
     }
 }

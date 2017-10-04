@@ -11,7 +11,7 @@
     Sender
   </div>
   <div class="panel-body">
-    <div [innerHtml]="messageBox" #stashArea class="stash-area" style="height:200px;margin-bottom:10px;overflow-y:auto">
+    <div id="stashArea" [innerHtml]="messageBox" #stashArea class="stash-area" style="height:200px;margin-bottom:10px;overflow-y:auto">
     </div>
 <!--       <app-server></app-server> -->
     <div class="send-area" style="height:80px;">
@@ -19,7 +19,7 @@
         <textarea #textArea id="message-box" class="form-control" rows="3"></textarea>
       </div>
       <div class="col-md-2 form-group">
-        <button [class]="'btn btn-sm '+ btn_color" type="button" (click)="onClickMe(textArea.value)">Send</button>
+        <button [class]="'btn btn-sm '+ btn_color" type="button" (click)="onClickMe(textArea.value)" [disabled]="btn_disable" [innerHtml]="btn_name"></button>
       </div>
     </div>
   </div>
